@@ -610,33 +610,7 @@
             transition: width 0.1s ease;
         }
 
-        /* Floating Action Button */
-        .fab {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 56px;
-            height: 56px;
-            background: var(--accent-color);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            box-shadow: var(--shadow-lg);
-            transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            z-index: 999;
-            will-change: transform, background-color;
-        }
-
-        .fab:hover {
-            transform: scale(1.05) translateZ(0);
-            background: var(--accent-light);
-        }
-
-        .fab:active {
-            transform: scale(0.95) translateZ(0);
-        }
+        
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
@@ -1053,11 +1027,6 @@
             </div>
         </section>
     </main>
-
-    <!-- Floating Action Button -->
-    <button class="fab" onclick="scrollToTop()" title="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
 
     <script>
         // Apple-grade JavaScript Architecture
@@ -10734,14 +10703,7 @@
                     });
                 }, 250);
             }, { passive: true });
-        }
-
-        // Scroll to Top
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            
         }
 
         // Error Display
