@@ -261,7 +261,7 @@
             transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
                         box-shadow 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             position: relative;
-            overflow: hidden;
+            /* overflow: hidden; */ /* <-- This line is removed to prevent tooltip clipping */
             will-change: transform;
         }
 
@@ -385,8 +385,8 @@
         }
 
         .slider-card {
-            min-width: 300px;
-            max-width: 300px;
+            min-width: 420px;
+            max-width: 420px;
             height: auto;
             flex-shrink: 0;
             scroll-snap-align: start;
@@ -404,8 +404,8 @@
         }
 
         .slider-card canvas {
-            max-height: 150px !important;
-            height: 150px !important;
+            max-height: 220px !important;
+            height: 220px !important;
         }
 
         .slider-nav {
@@ -532,9 +532,33 @@
             }
             to {
                 opacity: 1;
-                max-height: 300px;
+                max-height: 500px; /* Increased to accommodate more items */
                 transform: translateY(0);
             }
+        }
+
+        .hidden-subcategory {
+            display: none;
+        }
+
+        .show-more-btn {
+            background: none;
+            border: 1px solid transparent;
+            color: var(--accent-color);
+            cursor: pointer;
+            font-weight: 500;
+            padding: 0.75rem 1rem;
+            margin: 0.5rem 0 0.5rem 2rem;
+            text-align: left;
+            width: calc(100% - 2rem);
+            transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            font-style: italic;
+            border-radius: 0.5rem;
+        }
+
+        .show-more-btn:hover {
+            background-color: rgba(99, 102, 241, 0.05);
+            border-color: var(--border-color);
         }
 
         /* Loading States */
@@ -676,7 +700,7 @@
         #sunburst-container {
             position: relative;
             width: 100%;
-            min-height: 500px;
+            min-height: 600px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -686,7 +710,7 @@
         #sunburst-container svg {
             width: 100%;
             height: auto;
-            max-width: 500px;
+            max-width: 600px;
         }
 
         .sunburst-path {
@@ -1061,7 +1085,7 @@
         const EMBEDDED_JSON_DATA =  {
   "metadata": {
     "total_records": 23974,
-    "date_generated": "2025-07-30 14:06:02",
+    "date_generated": "2025-07-30 23:34:34",
     "missing_values_summary": {
       "Company_Name": 0.0,
       "Salary": 0.0,
@@ -4631,232 +4655,28 @@
         "Construction",
         "Human Resources Services",
         "Advertising Services",
-        "Retail",
         "Hospitals and Health Care",
+        "Retail",
         "Oil and Gas",
         "Higher Education",
         "Food and Beverage Services",
         "Computer and Network Security",
         "Airlines and Aviation",
-        "Manufacturing",
         "Transportation, Logistics, Supply Chain and Storage",
-        "Retail Luxury Goods and Jewelry",
-        "Investment Management",
-        "Industrial Machinery Manufacturing",
-        "Banking",
-        "Events Services",
-        "Government Administration",
-        "Appliances, Electrical, and Electronics Manufacturing",
-        "Engineering Services",
-        "Education Administration Programs",
-        "Education",
-        "Information Technology & Services",
-        "Professional Services",
-        "Motor Vehicle Manufacturing",
-        "Insurance",
-        "Defense and Space Manufacturing",
-        "Environmental Services",
-        "Entertainment Providers",
-        "Architecture and Planning",
-        "Travel Arrangements",
-        "Medical Equipment Manufacturing",
-        "Marketing Services",
-        "Wellness and Fitness Services",
-        "Holding Companies",
-        "Telecommunications",
-        "Civil Engineering",
-        "Chemical Manufacturing",
-        "Wholesale Building Materials",
-        "Machinery Manufacturing",
-        "Design Services",
-        "Food and Beverage Manufacturing",
-        "Security and Investigations",
-        "Pharmaceutical Manufacturing",
-        "Personal Care Product Manufacturing",
-        "Retail Apparel and Fashion",
-        "Facilities Services",
-        "Aviation and Aerospace Component Manufacturing",
-        "Restaurants",
-        "Technology, Information and Media",
-        "Media Production",
-        "Outsourcing and Offshoring Consulting",
-        "Maritime Transportation",
-        "Automation Machinery Manufacturing",
-        "Utilities",
-        "Information Services",
-        "Professional Training and Coaching",
-        "Spectator Sports",
-        "Medical Practices",
-        "Public Relations and Communications Services",
-        "E-Learning Providers",
-        "International Trade and Development",
-        "Broadcast Media Production and Distribution",
-        "Accounting",
-        "Law Practice",
-        "Executive Offices",
-        "Venture Capital and Private Equity Principals",
-        "Legal Services",
-        "Non-profit Organizations",
-        "Real Estate Agents and Brokers",
-        "Biotechnology Research",
-        "Human Resources",
-        "Research Services",
-        "Retail Motor Vehicles",
-        "Services for Renewable Energy",
-        "Wholesale",
-        "Computer Games",
-        "Computers and Electronics Manufacturing",
-        "Mental Health Care",
-        "Interior Design",
-        "Consumer Services",
-        "Computer Hardware Manufacturing",
-        "Renewable Energy Semiconductor Manufacturing",
-        "Renewable Energy Power Generation",
-        "Primary and Secondary Education",
-        "Internet Publishing",
-        "Beverage Manufacturing",
-        "Food & Beverages",
-        "Mining",
-        "IT System Custom Software Development",
-        "Translation and Localization",
-        "Truck Transportation",
-        "Capital Markets",
-        "Executive Search Services",
-        "Semiconductor Manufacturing",
-        "Education Management",
-        "Public Safety",
-        "Luxury Goods & Jewelry",
-        "Internet Marketplace Platforms",
-        "Renewable Energy Equipment Manufacturing",
-        "Packaging and Containers Manufacturing",
-        "Investment Banking",
-        "Repair and Maintenance",
-        "Shipbuilding",
-        "Book and Periodical Publishing",
-        "Blockchain Services",
-        "Farming",
-        "Rail Transportation",
-        "Textile Manufacturing",
-        "Mechanical Or Industrial Engineering",
-        "Landscaping Services",
-        "Market Research",
-        "International Affairs",
-        "Printing Services",
-        "Home Health Care Services",
-        "Cosmetics",
-        "Design",
-        "E-learning",
-        "Aviation & Aerospace",
-        "Retail Groceries",
-        "Government Relations Services",
-        "Furniture and Home Furnishings Manufacturing",
-        "Climate Technology Product Manufacturing",
-        "Automotive",
-        "Apparel & Fashion",
-        "Data Infrastructure and Analytics",
-        "Electrical Equipment Manufacturing",
-        "Electric Power Generation",
-        "Housing and Community Development",
-        "Food Production",
-        "Equipment Rental Services",
-        "Retail Health and Personal Care Products",
-        "Public Policy Offices",
-        "Wholesale Import and Export",
-        "Retail Art Supplies",
-        "Retail Furniture and Home Furnishings",
-        "Leisure, Travel & Tourism",
-        "Motor Vehicle Parts Manufacturing",
-        "Non-profit Organization Management",
-        "Individual and Family Services",
-        "Mobile Gaming Apps",
-        "Online Audio and Video Media",
-        "Newspaper Publishing",
-        "Musicians",
-        "Medical Device",
-        "Leasing Residential Real Estate",
-        "Gambling Facilities and Casinos",
-        "Data Security Software Products",
-        "Electric Power Transmission, Control, and Distribution",
-        "Business Supplies & Equipment",
-        "Commercial and Industrial Equipment Rental",
-        "Community Development and Urban Planning",
-        "Human Resources 4 on LinkedIn",
-        "Ground Passenger Transportation",
-        "Health and Human Services",
-        "Glass, Ceramics and Concrete Manufacturing",
-        "Government Relations",
-        "Health, Wellness & Fitness",
-        "Funds and Trusts",
-        "Freight and Package Transportation",
-        "Defense & Space",
-        "Cosmetology and Barber Schools",
-        "Consumer Goods",
-        "Consumer Electronics",
-        "Conservation Programs",
-        "Desktop Computing Software Products",
-        "Engines and Power Transmission Equipment Manufacturing",
-        "Entertainment",
-        "Construction Hardware Manufacturing",
-        "Computer Networking Products",
-        "Building Construction",
-        "Building Finishing Contractors",
-        "Civic and Social Organizations",
-        "Agriculture, Construction, Mining Machinery Manufacturing",
-        "Alternative Fuel Vehicle Manufacturing",
-        "Architectural and Structural Metal Manufacturing",
-        "Artists and Writers",
-        "Building Materials",
-        "IT System Design Services",
-        "Medical and Diagnostic Laboratories",
-        "Nonresidential Building Construction",
-        "IT System Data Services",
-        "Industry Associations",
-        "Maritime",
-        "Professional Organizations",
-        "Primary Metal Manufacturing",
-        "Photography",
-        "Plastics Manufacturing",
-        "Online Media",
-        "Oil, Gas, and Mining",
-        "Operations Consulting",
-        "Performing Arts",
-        "Mobile Computing Software Products",
-        "Museums, Historical Sites, and Zoos",
-        "Nanotechnology Research",
-        "Security Systems Services",
-        "Real Estate and Equipment Rental Services",
-        "Religious Institutions",
-        "Retail 2,368 on LinkedIn",
-        "Renewables & Environment",
-        "Retail Pharmacies",
-        "Steam and Air-Conditioning Supply",
-        "Solar Electric Power Generation",
-        "Social Networking Platforms",
-        "Space Research and Technology",
-        "Sporting Goods",
-        "Sporting Goods Manufacturing",
-        "Sports Teams and Clubs",
-        "Tobacco Manufacturing",
-        "Veterinary Services",
-        "Transportation Equipment Manufacturing",
-        "Urban Transit Services",
-        "Wholesale Appliances, Electrical, and Electronics",
-        "Warehousing and Storage",
-        "Wholesale Motor Vehicles and Parts",
-        "Wholesale Paper Products"
+        "Manufacturing"
       ],
       "values": [
-        241,
+        238,
         220,
         214,
         212,
-        178,
+        177,
         126,
         108,
         70,
-        67,
         66,
         65,
+        64,
         58,
         58,
         52,
@@ -4865,216 +4685,11 @@
         32,
         31,
         30,
-        30,
-        29,
-        27,
-        26,
-        26,
-        26,
-        26,
-        25,
-        25,
-        24,
-        23,
-        23,
-        23,
-        23,
-        22,
-        21,
-        19,
-        18,
-        18,
-        18,
-        18,
-        17,
-        17,
-        17,
-        17,
-        16,
-        16,
-        15,
-        15,
-        15,
-        15,
-        14,
-        14,
-        14,
-        13,
-        13,
-        13,
-        12,
-        12,
-        11,
-        11,
-        11,
-        11,
-        11,
-        10,
-        10,
-        10,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        8,
-        8,
-        8,
-        7,
-        7,
-        7,
-        6,
-        6,
-        6,
-        6,
-        6,
-        6,
-        6,
-        6,
-        6,
-        5,
-        5,
-        5,
-        5,
-        5,
-        5,
-        5,
-        5,
-        5,
-        5,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1
+        30
       ]
     },
     "top_posting_companies": {
       "labels": [
-        "Confidential",
         "Marriott International",
         "RTC-1 Employment Services",
         "GEMS Education",
@@ -5093,10 +4708,10 @@
         "LEAMS Education",
         "The First Group",
         "AIQU",
-        "Chalhoub Group"
+        "Chalhoub Group",
+        "Oracle"
       ],
       "values": [
-        1443,
         504,
         314,
         238,
@@ -5115,38 +4730,16 @@
         118,
         116,
         112,
-        106
-      ]
+        106,
+        105
+      ],
+      "note": "Excludes companies with 'Confidential' in their name."
     },
     "summary": {
-      "total_unique_companies": 5259,
-      "avg_posts_per_company": 4.56
+      "total_unique_companies": 5252,
+      "avg_posts_per_company": 4.28
     },
     "posting_patterns_by_category": {
-      "Confidential": {
-        "categories": [
-          "Professionals",
-          "Service and Sales Workers",
-          "Technicians and Associate Professionals",
-          "Managers",
-          "Clerical Support Workers",
-          "Elementary Occupations",
-          "Plant and Machine Operators, and Assemblers",
-          "Craft and Related Trades Workers",
-          "Skilled Agricultural, Forestry and Fishery Workers"
-        ],
-        "counts": [
-          317,
-          258,
-          233,
-          180,
-          170,
-          123,
-          88,
-          71,
-          3
-        ]
-      },
       "Marriott International": {
         "categories": [
           "Clerical Support Workers",
@@ -5309,6 +4902,26 @@
           62,
           13,
           3
+        ]
+      },
+      "VerifiedJobs.ae": {
+        "categories": [
+          "Professionals",
+          "Managers",
+          "Technicians and Associate Professionals",
+          "Service and Sales Workers",
+          "Elementary Occupations",
+          "Clerical Support Workers",
+          "Craft and Related Trades Workers"
+        ],
+        "counts": [
+          90,
+          65,
+          14,
+          2,
+          1,
+          1,
+          1
         ]
       }
     }
@@ -10238,7 +9851,7 @@
       "structure_type": "nested_hierarchy"
     }
   }
-} // <-- PASTE YOUR JSON DATA HERE
+}// <-- PASTE YOUR JSON DATA HERE
 
         // Chart.js Configuration
         Chart.defaults.color = '#64748b';
@@ -10683,7 +10296,8 @@
             
             let html = '<h3><i class="fas fa-sitemap"></i> ISCO-08 Job Classification Hierarchy</h3>';
             
-            Object.keys(hierarchy).slice(0, 6).forEach(level1 => {
+            // Loop through all Level 1 categories, no more slicing
+            Object.keys(hierarchy).forEach(level1 => {
                 const level1Data = hierarchy[level1];
                 const sanitizedId = level1.replace(/[^a-zA-Z0-9]/g, '');
                 
@@ -10696,20 +10310,29 @@
                         <div class="hierarchy-children" id="hierarchy-${sanitizedId}">
                 `;
                 
-                Object.keys(level1Data.level_2_categories).slice(0, 4).forEach(level2 => {
+                const level2Keys = Object.keys(level1Data.level_2_categories);
+                const initialLimit = 4;
+
+                // Render all subcategories, but hide ones beyond the limit
+                level2Keys.forEach((level2, index) => {
                     const level2Data = level1Data.level_2_categories[level2];
+                    const hiddenClass = index >= initialLimit ? 'hidden-subcategory' : '';
                     html += `
-                        <div class="hierarchy-item" style="margin-left: 1rem; background: var(--secondary-bg);">
-                            <i class="fas fa-arrow-right"></i> ${level2} 
+                        <div class="hierarchy-item ${hiddenClass}" data-parent-id="${sanitizedId}" style="margin-left: 1rem; background: var(--secondary-bg);">
+                            <i class="fas fa-arrow-right"></i> ${truncateLabel(level2, 50)} 
                             <span style="float: right; color: var(--text-secondary);">${level2Data.total_jobs.toLocaleString()} jobs</span>
                         </div>
                     `;
                 });
                 
-                if (Object.keys(level1Data.level_2_categories).length > 4) {
-                    html += `<div class="hierarchy-item" style="margin-left: 1rem; font-style: italic; color: var(--text-muted);">
-                        ... and ${Object.keys(level1Data.level_2_categories).length - 4} more subcategories
-                    </div>`;
+                // Add a functional "show more" button if there are hidden items
+                if (level2Keys.length > initialLimit) {
+                    const remainingCount = level2Keys.length - initialLimit;
+                    html += `
+                        <button class="show-more-btn" onclick="showMoreSubcategories('${sanitizedId}', this)">
+                            ... show ${remainingCount} more subcategories
+                        </button>
+                    `;
                 }
                 
                 html += '</div></div>';
@@ -10749,11 +10372,31 @@
             }
 
             if (AppState.edaData.applications_over_time) {
-                queueChart('applications-chart', 'line', 
-                    AppState.edaData.applications_over_time.average_applications.labels, 
-                    AppState.edaData.applications_over_time.average_applications.values,
-                    false,
-                    'Average Applicants'
+                const appTrendsData = AppState.edaData.applications_over_time;
+                const datasets = [
+                    {
+                        label: 'Average Applicants',
+                        data: appTrendsData.average_applications.values,
+                        fill: true,
+                        backgroundColor: 'rgba(99, 102, 241, 0.4)', // Accent color, semi-transparent
+                        borderColor: '#6366f1',
+                        pointBackgroundColor: '#6366f1',
+                        tension: 0.4,
+                    },
+                    {
+                        label: 'Median Applicants',
+                        data: appTrendsData.median_applications.values,
+                        fill: true,
+                        backgroundColor: 'rgba(16, 185, 129, 0.4)', // Success color, semi-transparent
+                        borderColor: '#10b981',
+                        pointBackgroundColor: '#10b981',
+                        tension: 0.4,
+                    }
+                ];
+
+                queueChart('applications-chart', 'line',
+                    appTrendsData.average_applications.labels,
+                    datasets // Pass the array of dataset objects
                 );
             }
         }
@@ -10766,36 +10409,38 @@
             const slider = document.getElementById('sector-hierarchy-slider');
             
             let html = '';
-            Object.keys(sectors).slice(0, 6).forEach(sector => {
+            // No longer slicing, will render all sectors
+            Object.keys(sectors).forEach(sector => {
                 const sectorData = sectors[sector];
                 const sanitizedSector = sector.replace(/[^a-zA-Z0-9]/g, '');
                 
                 html += `
                     <div class="slider-card">
-                        <h4 style="color: var(--accent-color); margin-bottom: 1rem; font-size: 1.1rem;">${sector}</h4>
+                        <h4 style="color: var(--accent-color); margin-bottom: 1rem; font-size: 1.1rem;">${truncateLabel(sector, 35)}</h4>
                         <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.9rem;">
                             ${(sectorData.sector_summary?.total_jobs_in_sector || 0).toLocaleString()} total jobs
                         </p>
-                        <canvas id="sector-${sanitizedSector}-mini-chart" style="max-height: ${MINI_CHART_HEIGHT}px !important;"></canvas>
+                        <canvas id="sector-${sanitizedSector}-chart"></canvas>
                     </div>
                 `;
             });
             
             slider.innerHTML = html;
 
-            // Queue mini charts
+            // Queue full-sized charts for all sectors
             setTimeout(() => {
-                Object.keys(sectors).slice(0, 6).forEach(sector => {
+                Object.keys(sectors).forEach(sector => {
                     const sectorData = sectors[sector];
                     const sanitizedSector = sector.replace(/[^a-zA-Z0-9]/g, '');
-                    const chartId = `sector-${sanitizedSector}-mini-chart`;
+                    const chartId = `sector-${sanitizedSector}-chart`;
                     
                     if (sectorData.job_categories) {
                         const level1Data = sectorData.job_categories;
-                        const labels = Object.keys(level1Data).slice(0, 6);
+                        const labels = Object.keys(level1Data).slice(0, 8); // Show up to 8 items in the legend
                         const values = labels.map(label => level1Data[label].total_jobs);
                         
-                        queueChart(chartId, 'doughnut', labels, values, true);
+                        // Set isSmall to false to get side-legend
+                        queueChart(chartId, 'doughnut', labels, values, false); 
                     }
                 });
             }, 100);
@@ -10839,21 +10484,21 @@
 
             const ctx = canvas.getContext('2d');
             
-            // Destroy existing chart
             if (AppState.charts.has(canvasId)) {
                 AppState.charts.get(canvasId).destroy();
             }
 
-            // Set canvas dimensions explicitly
             const height = isSmall ? MINI_CHART_HEIGHT : CHART_HEIGHT;
             canvas.style.height = `${height}px`;
             canvas.style.maxHeight = `${height}px`;
 
-                const config = {
+            const isMultiSeries = Array.isArray(data) && typeof data[0] === 'object';
+
+            const config = {
                 type: type,
                 data: {
                     labels: labels,
-                    datasets: [{
+                    datasets: isMultiSeries ? data : [{
                         label: datasetLabel,
                         data: data,
                         backgroundColor: generateColors(data.length),
@@ -10870,14 +10515,12 @@
                     },
                     plugins: {
                         legend: {
-                            display: type !== 'bar', // Hides the legend for bar charts
-                            position: type === 'line' ? 'top' : (isSmall ? 'bottom' : 'right'),
+                            display: type !== 'bar',
+                            position: isMultiSeries ? 'top' : (isSmall ? 'bottom' : 'right'),
                             labels: {
                                 boxWidth: isSmall ? 8 : 12,
                                 padding: isSmall ? 6 : 12,
-                                font: {
-                                    size: isSmall ? 9 : 11
-                                }
+                                font: { size: isSmall ? 9 : 11 }
                             }
                         },
                         tooltip: {
@@ -10885,30 +10528,22 @@
                             titleColor: '#1e293b',
                             bodyColor: '#64748b',
                             borderColor: '#e2e8f0',
-                            borderWidth: 1
+                            borderWidth: 1,
+                            mode: 'index',
+                            intersect: false,
                         }
                     },
                     scales: type !== 'pie' && type !== 'doughnut' ? {
                         y: {
                             beginAtZero: true,
-                            grid: {
-                                color: '#f1f5f9'
-                            },
-                            ticks: {
-                                font: {
-                                    size: isSmall ? 8 : 10
-                                }
-                            }
+                            grid: { color: '#f1f5f9' },
+                            ticks: { font: { size: isSmall ? 8 : 10 } }
                         },
                         x: {
-                            grid: {
-                                color: '#f1f5f9'
-                            },
+                            grid: { display: false },
                             ticks: {
                                 maxRotation: 45,
-                                font: {
-                                    size: isSmall ? 8 : 10
-                                },
+                                font: { size: isSmall ? 8 : 10 },
                                 callback: function(value) {
                                     const label = this.getLabelForValue(value);
                                     return truncateLabel(label, 20);
@@ -10918,6 +10553,13 @@
                     } : {}
                 }
             };
+
+            // For multi-series charts, calculate max Y value for padding
+            if (isMultiSeries && config.options.scales.y) {
+                const allDataPoints = config.data.datasets.flatMap(ds => ds.data);
+                const maxVal = Math.max(...allDataPoints);
+                config.options.scales.y.suggestedMax = maxVal + 50;
+            }
 
             const chart = new Chart(ctx, config);
             AppState.charts.set(canvasId, chart);
@@ -10968,6 +10610,21 @@
             }
         }
 
+        // Show more subcategories
+        function showMoreSubcategories(parentId, buttonElement) {
+            if (!parentId || !buttonElement) return;
+
+            // Find all hidden subcategories for this parent
+            const hiddenItems = document.querySelectorAll(`.hidden-subcategory[data-parent-id="${parentId}"]`);
+
+            hiddenItems.forEach(item => {
+                item.classList.remove('hidden-subcategory');
+            });
+
+            // Remove the "show more" button after it has been clicked
+            buttonElement.remove();
+        }
+
         // Hierarchy Toggle
         function toggleHierarchy(level1, element) {
             const children = document.getElementById(`hierarchy-${level1}`);
@@ -11002,7 +10659,7 @@
             const slider = document.getElementById('sector-hierarchy-slider');
             if (!slider) return;
             
-            const scrollAmount = 370;
+            const scrollAmount = 436; // New card width (420) + gap (16)
             slider.scrollBy({ 
                 left: direction === 'left' ? -scrollAmount : scrollAmount, 
                 behavior: 'smooth' 
