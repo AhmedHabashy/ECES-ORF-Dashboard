@@ -81,15 +81,15 @@
         }
 
         .nav-container {
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 100%;
-        }
+    max-width: 1400px; /*edit this to change the width of the navigation*/
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem; /* Re-added small padding for a clean edge */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
 
         .nav-logo {
             font-size: 1.5rem;
@@ -197,12 +197,12 @@
 
         /* Strictly Controlled Main Content */
         .main-content {
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 0 2rem 3rem 2rem;
-            position: relative;
-        }
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 0 3rem 0;
+    position: relative;
+}
 
         /* Section Height Management */
         .section {
@@ -624,7 +624,7 @@
             }
 
             .main-content {
-                padding: 0 1rem 2rem 1rem;
+                padding: 0 0 2rem 0;
             }
 
             .section {
@@ -742,7 +742,8 @@
         <div class="nav-container">
             <div class="nav-logo flex items-center gap-3">
                 <img src="src/logo.png" alt="Company Logo" class="h-10 w-auto">
-                <span><i class="fas fa-chart-bar"></i> UAE Jobs EDA</span>
+                <!-- <span><i class="fas fa-chart-bar"></i> UAE Jobs EDA</span> -->
+                <span>UAE Jobs EDA</span>
             </div>
             <ul class="nav-links">
                 <li><a href="#hero">Home</a></li>
